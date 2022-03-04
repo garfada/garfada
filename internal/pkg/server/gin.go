@@ -21,22 +21,22 @@ func NewGinServer(port string) error {
 	s.PATCH(business.Route, businessRoutes.Update)
 	s.DELETE(business.Route, businessRoutes.Delete)
 
-	s.POST(business.Route, dishRoutes.Create)
-	s.GET(business.Route, dishRoutes.Read)
-	s.PATCH(business.Route, dishRoutes.Update)
-	s.DELETE(business.Route, dishRoutes.Delete)
+	s.POST(dish.Route, dishRoutes.Create)
+	s.GET(dish.Route, dishRoutes.Read)
+	s.PATCH(dish.Route, dishRoutes.Update)
+	s.DELETE(dish.Route, dishRoutes.Delete)
 
-	s.POST(business.Route, employeeRoutes.Create)
-	s.GET(business.Route, employeeRoutes.Read)
-	s.PATCH(business.Route, employeeRoutes.Update)
-	s.DELETE(business.Route, employeeRoutes.Delete)
+	s.POST(employee.Route, employeeRoutes.Create)
+	s.GET(employee.Route, employeeRoutes.Read)
+	s.PATCH(employee.Route, employeeRoutes.Update)
+	s.DELETE(employee.Route, employeeRoutes.Delete)
 
-	s.POST(business.Route, mealRoutes.Create)
-	s.GET(business.Route, mealRoutes.Read)
-	s.PATCH(business.Route, mealRoutes.Update)
-	s.DELETE(business.Route, mealRoutes.Delete)
+	s.POST(meal.Route, mealRoutes.Create)
+	s.GET(meal.Route, mealRoutes.Read)
+	s.PATCH(meal.Route, mealRoutes.Update)
+	s.DELETE(meal.Route, mealRoutes.Delete)
 
-	err := s.Run(port)
+	err := s.Run("127.0.0.1:" + port)
 	if err != nil {
 		return err
 	}
